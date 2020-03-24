@@ -9,3 +9,4 @@ declare module "*.svg" {
 
 declare module "tailwindcss/base.css"
 declare module "tailwindcss/defaultConfig"
+declare module "*.jpg"

@@ -4,15 +4,17 @@ import defaultConfig from "tailwindcss/defaultConfig"
 import tw from "tailwind.macro"
 
 import base from "tailwindcss/base.css"
-import { Theme as TailwindTheme } from "./tailwind-types"
+import { Theme } from "./tailwind-types"
 
-export const theme: TailwindTheme = {
+export const theme: Theme = {
   ...defaultConfig.theme,
 }
 
-type GlobalStylesProps = {}
+type GlobalStylesProps = {
+  theme: Theme
+}
 
-export const GlobalStyles: React.FC<GlobalStylesProps> = () => (
+export const GlobalStyles: React.FC<GlobalStylesProps> = ({ theme }) => (
   <Global
     styles={css`
       ${base}
@@ -32,6 +34,7 @@ export const GlobalStyles: React.FC<GlobalStylesProps> = () => (
 
       body {
         ${tw`leading-normal`}
+        font-family: ${theme.fontFamily.sans.toString()}
       }
     `}
   />

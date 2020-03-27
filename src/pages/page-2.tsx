@@ -8,7 +8,6 @@ import { ReactComponent as SearchIcon } from "../images/icon-search.svg"
 import { ReactComponent as FilterIcon } from "../images/filter-icon.svg"
 import { ReactComponent as IconStar } from "../images/icon-star.svg"
 import Villa from "../images/villa.jpg"
-import { Link } from "gatsby"
 import { NavLink } from "../components/nav-link"
 
 type WorkcationProps = {

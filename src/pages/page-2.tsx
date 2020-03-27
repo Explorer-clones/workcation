@@ -8,6 +8,8 @@ import { ReactComponent as SearchIcon } from "../images/icon-search.svg"
 import { ReactComponent as FilterIcon } from "../images/filter-icon.svg"
 import { ReactComponent as IconStar } from "../images/icon-star.svg"
 import Villa from "../images/villa.jpg"
+import { Link } from "gatsby"
+import { NavLink } from "../components/nav-link"
 
 type WorkcationProps = {
   children: ReactNode
@@ -22,22 +24,96 @@ const Workcation: React.FC<WorkcationProps> = () => {
     >
       <header
         css={css`
-          ${tw`flex items-center justify-between px-4 py-4 bg-gray-900`}
+          ${tw`px-4 py-4 bg-gray-900 `}
         `}
       >
-        <Logo />
-
-        <button
+        <div
           css={css`
-            ${tw`inline-flex items-center justify-center w-10 h-10 focus:outline-none focus:shadow-outline`}
+            ${tw`flex items-center justify-between`}
           `}
         >
-          <HamburgerIcon
+          <Logo />
+
+          <button
             css={css`
-              ${tw`w-6 h-6 text-gray-500 fill-current`}
+              ${tw`inline-flex items-center justify-center w-10 h-10 text-gray-500 focus:outline-none focus:shadow-outline hover:text-white focus:text-white`}
+            `}
+          >
+            <HamburgerIcon
+              css={css`
+                ${tw`w-6 h-6 fill-current`}
+              `}
+            />
+          </button>
+        </div>
+
+        <div>
+          <div
+            css={css`
+              ${tw`flex flex-col pb-5 mt-3`}
+            `}
+          >
+            <NavLink to="#">List your property</NavLink>
+            <NavLink to="#">Trips</NavLink>
+            <NavLink to="#">Messages</NavLink>
+          </div>
+          <hr
+            css={css`
+              ${tw`m-0 -mx-4 bg-gray-800`}
             `}
           />
-        </button>
+
+          <div
+            css={css`
+              ${tw`flex flex-col`}
+            `}
+          >
+            <div
+              css={css`
+                ${tw`flex items-center mt-4`}
+              `}
+            >
+              <img
+                css={css`
+                  ${tw`block object-cover w-10 h-10 m-0 border-2 border-gray-600 border-solid rounded-full`}
+                `}
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+                alt="avatar-image"
+              />
+              <span
+                css={css`
+                  ${tw`ml-4 font-medium text-white text-gray-200`}
+                `}
+              >
+                Isla Schoger
+              </span>
+            </div>
+            <NavLink
+              css={css`
+                ${tw`py-2 mt-4 text-sm font-normal text-gray-400 hover:text-white`}
+              `}
+              to="#"
+            >
+              Account Settings
+            </NavLink>
+            <NavLink
+              css={css`
+                ${tw`py-2 text-sm font-normal text-gray-400 hover:text-white`}
+              `}
+              to="#"
+            >
+              Support
+            </NavLink>
+            <NavLink
+              css={css`
+                ${tw`py-2 text-sm font-normal text-gray-400 hover:text-white`}
+              `}
+              to="#"
+            >
+              Sign Out
+            </NavLink>
+          </div>
+        </div>
       </header>
       <section
         css={css`
@@ -73,7 +149,7 @@ const Workcation: React.FC<WorkcationProps> = () => {
 
         <button
           css={css`
-            ${tw`flex items-center px-3 py-2 bg-gray-700 rounded-lg`}
+            ${tw`flex items-center px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:shadow-outline`}
           `}
         >
           <FilterIcon
@@ -127,7 +203,7 @@ const Workcation: React.FC<WorkcationProps> = () => {
           <div>
             <div
               css={css`
-                ${tw`px-4 py-4 bg-white rounded-lg shadow-lg`}
+                ${tw`relative px-4 py-4 mx-4 -mt-16 bg-white rounded-lg shadow-lg`}
               `}
             >
               <div

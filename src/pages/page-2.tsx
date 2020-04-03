@@ -9,6 +9,11 @@ import { ReactComponent as FilterIcon } from "../images/filter-icon.svg"
 import { ReactComponent as IconStar } from "../images/icon-star.svg"
 import Villa from "../images/villa.jpg"
 import { NavLink } from "../components/nav-link"
+// import { FormInput } from "../components/form-elements/form-input"
+import { TextareaForm } from "../components/form-elements/textarea-input"
+import { InputForm } from "../components/form-elements/input-form"
+import { MultiSelectForm } from "../components/form-elements/multiselect-form"
+import { SelectForm } from "../components/form-elements/select-form"
 
 type WorkcationProps = {
   children: ReactNode
@@ -116,56 +121,155 @@ const Workcation: React.FC<WorkcationProps> = () => {
       </header>
       <section
         css={css`
-          ${tw`flex items-center justify-between px-4 py-4 bg-gray-800`}
+          ${tw`px-4 py-4 bg-gray-800`}
         `}
       >
         <div
           css={css`
-            ${tw`relative flex items-center`}
+            ${tw`flex items-center justify-between mb-4`}
           `}
         >
-          <SearchIcon
+          <div
             css={css`
-              ${tw`absolute w-6 h-6 ml-2 text-gray-600 fill-current`}
-            `}
-          />
-          <input
-            type="text"
-            placeholder="Search by keywords"
-            css={css`
-              ${tw`w-full py-2 pl-10 pr-4 mr-4 text-white bg-gray-900 rounded-lg focus:outline-none focus:bg-gray-100 focus:text-gray-900`}
-              &:focus {
-                &::placeholder {
-                  ${tw`text-gray-800`}
-                }
-              }
-              &::placeholder {
-                ${tw`text-gray-400`}
-              }
-            `}
-          />
-        </div>
-
-        <button
-          css={css`
-            ${tw`flex items-center px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:shadow-outline`}
-          `}
-        >
-          <FilterIcon
-            css={css`
-              ${tw`w-6 h-6 mr-2 text-gray-500 fill-current`}
-            `}
-          />
-          <span
-            css={css`
-              ${tw`text-white`}
+              ${tw`relative flex items-center`}
             `}
           >
-            Filters
-          </span>
-        </button>
+            <SearchIcon
+              css={css`
+                ${tw`absolute w-6 h-6 ml-2 text-gray-600 fill-current`}
+              `}
+            />
+            <input
+              type="text"
+              placeholder="Search by keywords"
+              css={css`
+                ${tw`w-full py-2 pl-10 pr-4 mr-4 text-white bg-gray-900 rounded-lg focus:outline-none focus:bg-gray-100 focus:text-gray-900`}
+                &:focus {
+                  &::placeholder {
+                    ${tw`text-gray-800`}
+                  }
+                }
+                &::placeholder {
+                  ${tw`text-gray-400`}
+                }
+              `}
+            />
+          </div>
 
-        <form></form>
+          <button
+            css={css`
+              ${tw`flex items-center px-3 py-2 bg-gray-700 rounded-lg focus:outline-none focus:shadow-outline`}
+            `}
+          >
+            <FilterIcon
+              css={css`
+                ${tw`w-6 h-6 mr-2 text-gray-500 fill-current`}
+              `}
+            />
+            <span
+              css={css`
+                ${tw`text-white`}
+              `}
+            >
+              Filters
+            </span>
+          </button>
+        </div>
+
+        <hr
+          css={css`
+            ${tw`m-0 mb-4 -mx-4 bg-gray-900`}
+          `}
+        />
+
+        <form
+          css={css`
+            ${tw`block`}
+          `}
+        >
+          <div>
+            <label>
+              Bedrooms
+              <select name="bedrooms" id="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </label>
+            <label>
+              Bathrooms
+              <select name="bathrooms" id="bathrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </label>
+            <label>
+              Price Range
+              <select name="price-range" id="price-range">
+                <option value="$0-1000/wk">0-$1000/wk</option>
+                <option value="$1000-2000/wk">$1000-2000/wk</option>
+                <option value="$2000-3000/wk">$2000-3000/wk</option>
+                <option value="$3000-4000/wk">$3000-4000/wk</option>
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <span>Property Type</span>
+
+            <label>
+              <input type="radio" name="property-type" id="house" />
+              <span>House</span>
+            </label>
+            <label>
+              <input type="radio" name="property-type" id="apartment" />
+              <span>Apartment</span>
+            </label>
+            <label>
+              <input type="radio" name="property-type" id="loft" />
+              <span>Loft</span>
+            </label>
+            <label>
+              <input type="radio" name="property-type" id="townhouse" />
+              <span>Townhouse</span>
+            </label>
+          </div>
+
+          <div>
+            <span>Amenities</span>
+            <label>
+              <input type="checkbox" name="amenities" id="balcony" />
+              <span>Balcony</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="pool" />
+              <span>Pool</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="beach" />
+              <span>Beach</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="pet-friendly" />
+              <span>Pet friendly</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="kid-friendly" />
+              <span>Kid friendly</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="parking" />
+              <span>Parking</span>
+            </label>
+            <label>
+              <input type="checkbox" name="amenities" id="air-conditioning" />
+              <span>Air Conditioning</span>
+            </label>
+          </div>
+        </form>
       </section>
       <main
         css={css`
@@ -179,6 +283,31 @@ const Workcation: React.FC<WorkcationProps> = () => {
         >
           Los Angeles
         </h3>
+        <TextareaForm />
+        <InputForm
+          css={css`
+            ${tw`block`}
+          `}
+        />
+        <MultiSelectForm
+          id="unique"
+          name="my-options"
+          css={css`
+            ${tw`block w-full`}
+          `}
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Kebab</option>
+        </MultiSelectForm>
+
+        <SelectForm name="select" id="select">
+          <option> Value 1</option>
+          <option> Value 2</option>
+          <option> Value 3</option>
+          <option> Value 4</option>
+        </SelectForm>
         <p
           css={css`
             ${tw`mt-2 text-gray-700`}

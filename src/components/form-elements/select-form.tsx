@@ -21,11 +21,11 @@ export const SelectForm: React.FC<SelectFormProps> = ({
 }) => {
   const theme = useTheme<Theme>()
 
-  type svgToDataURI = (value: string) => string
+  type SvgToDataURI = (value: string) => string
 
-  const applyColorsToSVGIcon = (
+  const applyColorsToCheveronSVGIcon = (
     color: string,
-    svgToMiniDataURI: svgToDataURI
+    svgToMiniDataURI: SvgToDataURI
   ): string =>
     `"${svgToMiniDataURI(
       `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='${color}'>
@@ -47,7 +47,7 @@ export const SelectForm: React.FC<SelectFormProps> = ({
         background-position: ${`right ${theme.spacing[2]} center`};
         background-size: 1.5em 1.5em;
         background-repeat: no-repeat;
-        background-image: url(${applyColorsToSVGIcon(
+        background-image: url(${applyColorsToCheveronSVGIcon(
           theme.colors.gray[500],
           svgToMiniDataURI
         )});

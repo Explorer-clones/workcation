@@ -14,6 +14,7 @@ import { TextareaForm } from "../components/form-elements/textarea-input"
 import { InputForm } from "../components/form-elements/input-form"
 import { MultiSelectForm } from "../components/form-elements/multiselect-form"
 import { SelectForm } from "../components/form-elements/select-form"
+import { CheckboxForm } from "../components/form-elements/checkbox-form"
 
 type WorkcationProps = {
   children: ReactNode
@@ -308,6 +309,17 @@ const Workcation: React.FC<WorkcationProps> = () => {
           <option> Value 3</option>
           <option> Value 4</option>
         </SelectForm>
+        <CheckboxForm />
+        <CheckboxForm
+          css={css`
+            ${tw`text-indigo-600`}
+          `}
+        />
+        <CheckboxForm
+          css={css`
+            ${tw`w-8 h-8 text-pink-600`}
+          `}
+        />
         <p
           css={css`
             ${tw`mt-2 text-gray-700`}

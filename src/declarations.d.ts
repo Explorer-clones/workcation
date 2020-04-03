@@ -9,4 +9,5 @@ declare module "*.svg" {
 
 declare module "tailwindcss/base.css"
 declare module "tailwindcss/defaultConfig"
+declare module "mini-svg-data-uri"
 declare module "*.jpg"

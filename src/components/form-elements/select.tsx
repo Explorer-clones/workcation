@@ -6,17 +6,19 @@ import { css } from "@emotion/core"
 import { useTheme } from "emotion-theming"
 import tw from "tailwind.macro"
 import { Theme } from "../../utils/tailwind-types"
-type SelectFormProps = {
+type SelectProps = {
   css?: SerializedStyles
   name: string
   id: string
+  iconColor?: string
   children: ReactNode
 }
 
-export const SelectForm: React.FC<SelectFormProps> = ({
+export const Select: React.FC<SelectProps> = ({
   id,
   name,
   children,
+  iconColor,
   ...props
 }) => {
   const theme = useTheme<Theme>()
@@ -36,6 +38,8 @@ export const SelectForm: React.FC<SelectFormProps> = ({
       </svg>`
     )}"`
 
+  console.log(iconColor)
+
   return (
     <select
       name={name}
@@ -47,13 +51,20 @@ export const SelectForm: React.FC<SelectFormProps> = ({
         background-position: ${`right ${theme.spacing[2]} center`};
         background-size: 1.5em 1.5em;
         background-repeat: no-repeat;
-        background-image: url(${applyColorsToCheveronSVGIcon(
-          theme.colors.gray[500],
-          svgToMiniDataURI
-        )});
+        background-image: ${iconColor
+          ? `url(${applyColorsToCheveronSVGIcon(iconColor, svgToMiniDataURI)})`
+          : `url(${applyColorsToCheveronSVGIcon(
+              theme.colors.gray[500],
+              svgToMiniDataURI
+            )})`};
       `}
     >
       {children}
     </select>
   )
 }
+
+//  background-image: url(${applyColorsToCheveronSVGIcon(
+//    theme.colors.gray[500],
+//    svgToMiniDataURI
+//  )});

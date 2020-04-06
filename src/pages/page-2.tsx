@@ -10,11 +10,11 @@ import { ReactComponent as IconStar } from "../images/icon-star.svg"
 import Villa from "../images/villa.jpg"
 import { NavLink } from "../components/nav-link"
 // import { FormInput } from "../components/form-elements/form-input"
-import { TextareaForm } from "../components/form-elements/textarea-input"
-import { InputForm } from "../components/form-elements/input-form"
-import { MultiSelectForm } from "../components/form-elements/multiselect-form"
-import { SelectForm } from "../components/form-elements/select-form"
-import { CheckboxForm } from "../components/form-elements/checkbox-form"
+import { TextareaForm } from "../components/form-elements/textarea"
+import { InputForm } from "../components/form-elements/input"
+import { MultiSelectForm } from "../components/form-elements/multiselect"
+import { SelectForm } from "../components/form-elements/select"
+import { CheckboxForm } from "../components/form-elements/checkbox"
 
 type WorkcationProps = {
   children: ReactNode

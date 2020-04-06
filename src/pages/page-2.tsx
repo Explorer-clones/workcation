@@ -15,6 +15,7 @@ import { InputForm } from "../components/form-elements/input"
 import { MultiSelectForm } from "../components/form-elements/multiselect"
 import { SelectForm } from "../components/form-elements/select"
 import { CheckboxForm } from "../components/form-elements/checkbox"
+import { RadioButton } from "../components/form-elements/radio-button"
 
 type WorkcationProps = {
   children: ReactNode
@@ -320,6 +321,7 @@ const Workcation: React.FC<WorkcationProps> = () => {
             ${tw`w-8 h-8 text-pink-600`}
           `}
         />
+        <RadioButton name="radio" id="gender" />
         <p
           css={css`
             ${tw`mt-2 text-gray-700`}

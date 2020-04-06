@@ -9,13 +9,11 @@ import { ReactComponent as FilterIcon } from "../images/filter-icon.svg"
 import { ReactComponent as IconStar } from "../images/icon-star.svg"
 import Villa from "../images/villa.jpg"
 import { NavLink } from "../components/nav-link"
-// import { FormInput } from "../components/form-elements/form-input"
-import { TextareaForm } from "../components/form-elements/textarea"
-import { InputForm } from "../components/form-elements/input"
-import { MultiSelectForm } from "../components/form-elements/multiselect"
-import { SelectForm } from "../components/form-elements/select"
-import { CheckboxForm } from "../components/form-elements/checkbox"
+import { Select } from "../components/form-elements/select"
+import { Checkbox } from "../components/form-elements/checkbox"
 import { RadioButton } from "../components/form-elements/radio-button"
+import { FormLabel } from "../components/form-label"
+import { Legend } from "../components/legend"
 
 type WorkcationProps = {
   children: ReactNode
@@ -189,59 +187,124 @@ const Workcation: React.FC<WorkcationProps> = () => {
             ${tw`block`}
           `}
         >
-          <div>
-            <label>
-              Bedrooms
-              <select name="bedrooms" id="bedrooms">
+          <fieldset
+            css={css`
+              ${tw`border-none`}
+            `}
+          >
+            <label
+              css={css`
+                ${tw`inline-block w-1/2 pr-2`}
+              `}
+            >
+              <FormLabel>Bedrooms</FormLabel>
+              <Select
+                name="bedrooms"
+                id="bedrooms"
+                iconColor="#FFFFFF"
+                css={css`
+                  ${tw`w-full mt-2 text-white bg-gray-700 border-none rounded-lg shadow`}
+                `}
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-              </select>
+              </Select>
             </label>
-            <label>
-              Bathrooms
-              <select name="bathrooms" id="bathrooms">
+            <label
+              css={css`
+                ${tw`inline-block w-1/2 pl-2`}
+              `}
+            >
+              <FormLabel>Bathrooms</FormLabel>
+              <Select
+                name="bathrooms"
+                id="bathrooms"
+                iconColor="#FFFFFF"
+                css={css`
+                  ${tw`w-full mt-2 text-white bg-gray-700 border-none rounded-lg shadow`}
+                `}
+              >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-              </select>
+              </Select>
             </label>
             <label>
-              Price Range
-              <select name="price-range" id="price-range">
+              <FormLabel
+                css={css`
+                  ${tw`mt-4`}
+                `}
+              >
+                Price Range
+              </FormLabel>
+              <Select
+                name="price-range"
+                id="price-range"
+                iconColor="#FFFFFF"
+                css={css`
+                  ${tw`w-full mt-2 text-white bg-gray-700 border-none rounded-lg shadow`}
+                `}
+              >
                 <option value="$0-1000/wk">0-$1000/wk</option>
                 <option value="$1000-2000/wk">$1000-2000/wk</option>
                 <option value="$2000-3000/wk">$2000-3000/wk</option>
                 <option value="$3000-4000/wk">$3000-4000/wk</option>
-              </select>
+              </Select>
             </label>
-          </div>
+          </fieldset>
 
-          <div>
-            <span>Property Type</span>
+          <hr
+            css={css`
+              ${tw`m-0 mb-4 -mx-4 bg-gray-900`}
+            `}
+          />
 
-            <label>
+          <fieldset
+            css={css`
+              ${tw`border-none`}
+            `}
+          >
+            <Legend>Property Type</Legend>
+
+            <label
+              css={css`
+                ${tw`block mt-2`}
+              `}
+            >
               <input type="radio" name="property-type" id="house" />
               <span>House</span>
             </label>
-            <label>
+            <label
+              css={css`
+                ${tw`block mt-2`}
+              `}
+            >
               <input type="radio" name="property-type" id="apartment" />
               <span>Apartment</span>
             </label>
-            <label>
+            <label
+              css={css`
+                ${tw`block mt-2`}
+              `}
+            >
               <input type="radio" name="property-type" id="loft" />
               <span>Loft</span>
             </label>
-            <label>
+            <label
+              css={css`
+                ${tw`block mt-2`}
+              `}
+            >
               <input type="radio" name="property-type" id="townhouse" />
               <span>Townhouse</span>
             </label>
-          </div>
+          </fieldset>
 
           <div>
-            <span>Amenities</span>
+            <Legend>Amenities</Legend>
             <label>
               <input type="checkbox" name="amenities" id="balcony" />
               <span>Balcony</span>
@@ -285,43 +348,7 @@ const Workcation: React.FC<WorkcationProps> = () => {
         >
           Los Angeles
         </h3>
-        <TextareaForm />
-        <InputForm
-          css={css`
-            ${tw`block`}
-          `}
-        />
-        <MultiSelectForm
-          id="unique"
-          name="my-options"
-          css={css`
-            ${tw`block w-full`}
-          `}
-        >
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-          <option>Kebab</option>
-        </MultiSelectForm>
 
-        <SelectForm name="select" id="select">
-          <option> Value 1</option>
-          <option> Value 2</option>
-          <option> Value 3</option>
-          <option> Value 4</option>
-        </SelectForm>
-        <CheckboxForm />
-        <CheckboxForm
-          css={css`
-            ${tw`text-indigo-600`}
-          `}
-        />
-        <CheckboxForm
-          css={css`
-            ${tw`w-8 h-8 text-pink-600`}
-          `}
-        />
-        <RadioButton name="radio" id="gender" />
         <p
           css={css`
             ${tw`mt-2 text-gray-700`}

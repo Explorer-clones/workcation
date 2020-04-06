@@ -14,3 +14,16 @@ export const usePlaceholderFormDefaults = (): SerializedStyles => {
     }
   `
 }
+
+export const useMsCheckMediaNotPrint = (): SerializedStyles => {
+  return css`
+    &::-ms-check {
+      @media not print: {
+        color: transparent;
+        background: inherit;
+        border-color: inherit;
+        border-radius: inherit;
+      }
+    }
+  `
+}

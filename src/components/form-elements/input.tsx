@@ -5,12 +5,12 @@ import {
   useBasicFormStyling,
 } from "../../hooks/useFormStyles"
 
-type InputFormProps = {
+type InputProps = {
   css?: SerializedStyles
   placeholder?: string
 }
 
-export const InputForm: React.FC<InputFormProps> = ({
+export const Input: React.FC<InputProps> = ({
   placeholder = "Your name",
   ...props
 }) => {

@@ -4,11 +4,12 @@ import svgToMiniDataURI from "mini-svg-data-uri"
 import tw from "tailwind.macro"
 import { useTheme } from "emotion-theming"
 import { Theme } from "../../utils/tailwind-types"
-type CheckboxFormProps = {
+import { useMsCheckMediaNotPrint } from "../../hooks/useFormStyles"
+type CheckboxProps = {
   css?: SerializedStyles
 }
 
-export const CheckboxForm: React.FC<CheckboxFormProps> = props => {
+export const Checkbox: React.FC<CheckboxProps> = props => {
   const theme = useTheme<Theme>()
   type SvgToDataURI = (value: string) => string
 
@@ -43,15 +44,7 @@ export const CheckboxForm: React.FC<CheckboxFormProps> = props => {
             svgToMiniDataURI
           )});
         }
-
-        &::-ms-check {
-          @media not print: {
-            color: transparent;
-            background: inherit;
-            border-color: inherit;
-            border-radius: inherit;
-          }
-        }
+        ${useMsCheckMediaNotPrint()}
       `}
       {...props}
     />

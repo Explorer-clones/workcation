@@ -6,12 +6,12 @@ import {
   usePlaceholderFormDefaults,
   useBasicFormStyling,
 } from "../../hooks/useFormStyles"
-type TextareaFormProps = {
+type TextareaProps = {
   css?: SerializedStyles
   placeholder?: string
 }
 
-export const TextareaForm: React.FC<TextareaFormProps> = ({
+export const Textarea: React.FC<TextareaProps> = ({
   placeholder = "Enter some long form content.",
   ...props
 }) => {

@@ -6,6 +6,8 @@ import { useTheme } from "emotion-theming"
 import { Theme } from "../../utils/tailwind-types"
 import { useMsCheckMediaNotPrint } from "../../hooks/useFormStyles"
 type CheckboxProps = {
+  name: string
+  id: string
   css?: SerializedStyles
 }
 
